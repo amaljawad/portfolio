@@ -283,9 +283,9 @@ const SITE = {
     eyebrow: "Contact",
     title: "Let's make something together.",               // PLACEHOLDER
     text: "Commissions, collaborations, freelance work or just saying hi — I'd love to hear from you.", // PLACEHOLDER
-    email: "hello@example.com",                             // PLACEHOLDER
+    email: "malooinks@gmail.com",                             // PLACEHOLDER
     socials: [                                              // PLACEHOLDER links
-      { label: "Instagram", href: "https://instagram.com/" },
+      { label: "Instagram", href: "https://instagram.com/malooinks" },
       { label: "Behance",   href: "https://behance.net/" },
       { label: "ArtStation", href: "https://artstation.com/" },
     ],
