@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amal Jawad — Concept Art, Illustration, 3D & Design</title>
+  <meta name="description" content="Portfolio of concept art, illustration, character design, 3D art and graphic design.">
+  <link rel="icon" type="image/png" href="images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+
+  <!-- Fonts: Fraunces (display serif) + DM Sans (body) + DM Mono (small labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="loading">
+  <!-- Opening animation: her name sketched in pencil (see js/loader.js) -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <img class="loader__logo" src="images/logo/malooinks.png" alt="">
+    <canvas id="loaderCanvas"></canvas>
+    <div class="loader__meta"><span id="loaderLabel"></span><b id="loaderPct">0%</b></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo">
+      <img class="nav__mark" src="images/logo/malooinks.png" alt="Malooinks logo">
+      <span data-text="logo"></span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Main"></nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <canvas id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero__text">
+        <p class="eyebrow" data-text="hero.eyebrow"></p>
+        <h1 class="hero__name">
+          <span class="line"><span data-text="hero.nameLine1"></span></span>
+          <span class="line"><span class="italic" data-text="hero.nameLine2"></span></span>
+        </h1>
+      </div>
+      <div class="hero__foot">
+        <div>
+          <p class="hero__tagline" data-text="hero.tagline"></p>
+          <a class="btn" href="#work"><span data-text="hero.cta"></span><i aria-hidden="true">↓</i></a>
+        </div>
+        <div class="hero__scroll"><span data-text="hero.scrollHint"></span><b></b></div>
+      </div>
+    </section>
+
+    <!-- DISCIPLINE STRIP -->
+    <div class="marquee" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
+
+    <!-- WORK -->
+    <section class="section" id="work">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow" data-text="work.eyebrow"></p>
+          <h2 class="h2" data-text="work.title"></h2>
+          <p class="lead" data-text="work.intro"></p>
+        </header>
+        <div class="filters reveal" id="filters"></div>
+        <div class="grid" id="grid"></div>
+        <div class="more" id="more" hidden>
+          <button class="btn" id="moreBtn" type="button"></button>
+          <p id="moreCount"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section--tint" id="about">
+      <div class="wrap about">
+        <div class="about__portrait reveal">
+          <div class="tilt" id="portraitTilt">
+            <img id="portrait" alt="Portrait of the artist">
+            <span class="tilt__glare"></span>
+          </div>
+          <img class="stamp" src="images/logo/malooinks.png" alt="Malooinks — with love!">
+          <p class="caption" data-text="about.portraitCaption"></p>
+        </div>
+        <div class="about__text">
+          <p class="eyebrow reveal" data-text="about.eyebrow"></p>
+          <h2 class="h2 reveal" data-text="about.title"></h2>
+          <div id="aboutParas" class="reveal"></div>
+          <dl class="facts reveal" id="facts"></dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISPLAYS: client projects, each opens a 2D slideshow -->
+    <section class="section" id="displays">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow" data-text="displays.eyebrow"></p>
+          <h2 class="h2" data-text="displays.title"></h2>
+          <p class="lead" data-text="displays.intro"></p>
+          <p class="credit" id="displaysCredit"></p>
+        </header>
+        <ul class="dp-list" id="displayList"></ul>
+      </div>
+    </section>
+
+    <!-- THESIS: final-year project (Hareafter), same slideshow as Displays -->
+    <section class="section section--tint" id="thesis">
+      <div class="wrap">
+        <div class="thesis__head">
+          <header class="section__head reveal">
+            <p class="eyebrow" data-text="thesis.eyebrow"></p>
+            <h2 class="thesis__title" data-text="thesis.title"></h2>
+            <p class="lead" data-text="thesis.intro"></p>
+            <p class="credit" id="thesisCredit"></p>
+          </header>
+          <div class="thesis__cover reveal" id="thesisCover" hidden>
+            <div class="tilt"><img id="thesisCoverImg" alt="Hareafter" decoding="async"><span class="tilt__glare"></span></div>
+          </div>
+        </div>
+        <ul class="dp-list" id="thesisList"></ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <img class="contact__logo reveal" src="images/logo/malooinks-white.png" alt="Malooinks — with love!">
+        <p class="eyebrow reveal" data-text="contact.eyebrow"></p>
+        <h2 class="contact__title reveal" data-text="contact.title"></h2>
+        <p class="lead reveal" data-text="contact.text"></p>
+        <a class="contact__email reveal" id="email"></a>
+        <div class="socials reveal" id="socials"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><p><span data-text="footer"></span></p></footer>
+
+  <!-- LIGHTBOX (single images + videos from the Work grid) -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" id="lbClose" aria-label="Close">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous">←</button>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next">→</button>
+    <figure class="lightbox__fig">
+      <img id="lbImg" alt="">
+      <video id="lbVideo" controls playsinline loop preload="metadata" hidden></video>
+      <figcaption>
+        <h3 id="lbTitle"></h3>
+        <p id="lbMeta"></p>
+        <p id="lbDesc"></p>
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- PROJECT SLIDESHOW (2D carousel with notes, opened from the Displays section) -->
+  <div class="deck" id="deck" hidden role="dialog" aria-modal="true" aria-label="Project slideshow">
+    <button class="deck__close" id="deckClose" aria-label="Close">×</button>
+    <div class="deck__stage">
+      <div class="deck__viewport" id="deckView"><div class="deck__track" id="deckTrack"></div></div>
+      <button class="deck__nav deck__nav--prev" id="deckPrev" aria-label="Previous slide">←</button>
+      <button class="deck__nav deck__nav--next" id="deckNext" aria-label="Next slide">→</button>
+      <div class="deck__bar"><span id="deckCount"></span><div class="deck__dots" id="deckDots"></div></div>
+    </div>
+    <aside class="deck__notes">
+      <p class="eyebrow" id="deckCollab"></p>
+      <h3 id="deckTitle"></h3>
+      <p class="deck__meta" id="deckMeta"></p>
+      <p class="deck__summary" id="deckSummary"></p>
+      <div class="deck__note"><p class="eyebrow">Notes</p><p id="deckNote"></p></div>
+    </aside>
+  </div>
+
+  <!-- three.js (pinned version) for the 3D hero -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/loader.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
